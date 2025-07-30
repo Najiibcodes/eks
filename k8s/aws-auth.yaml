@@ -1,0 +1,16 @@
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: aws-auth
+#   namespace: kube-system
+# data:
+#   mapUsers: |
+#     - userarn: <user's iam arn> 
+#       username: admin
+#       groups:
+#         - system:masters  #or least privilege 
+        
+
+
+#dont need it now since im using same aws credentials that created eks cluster - granted system:masters anyways
+#leaving here just incase i need to grant access
