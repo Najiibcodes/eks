@@ -1,0 +1,16 @@
+provider: aws
+domainFilters:
+  - eks.najiib.co.uk
+policy: sync
+registry: txt
+txtOwnerId: eks
+
+serviceAccount:
+  create: true
+  name: external-dns
+  automountServiceAccountToken: true       
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::512285571836:role/external-dns
+
+aws:
+  evaluateTargetHealth: false  #added this cos my new nlb helm created was unhealthy so app not accessible (quick fix)

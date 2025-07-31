@@ -1,0 +1,8 @@
+installCRDs: true
+
+serviceAccount:
+  create: true
+  name: cert-manager            
+  automountServiceAccountToken: true
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::512285571836:role/cert-manager-new
